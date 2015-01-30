@@ -1,4 +1,4 @@
-![Build Status](https://travis-ci.org/arschmitz/qunit-assert-classes.png)](https://travis-ci.org/arschmitz/qunit-assert-classes) [![NPM version](https://badge.fury.io/js/qunit-assert-classes.png)](https://www.npmjs.com/package/qunit-assert-classes)
+[![Build Status](https://travis-ci.org/arschmitz/qunit-assert-classes.png)](https://travis-ci.org/arschmitz/qunit-assert-classes) [![NPM version](https://badge.fury.io/js/qunit-assert-classes.png)](https://www.npmjs.com/package/qunit-assert-classes)
 
 
 # QUnit Classes assertion plugin
