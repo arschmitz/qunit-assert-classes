@@ -1,0 +1,40 @@
+{
+  "name": "qunit-assert-classes",
+  "description": "A set of assertions for checking thats an element has ( or does not have ) any number of classes. The check is order independent and gives a diff of the expected classes.",
+  "version": "0.0.0-pre",
+  "author": {
+    "name": "Alex Schmitz",
+    "url": "https://github.com/arschmitz/qunit-assert-classes/blob/master/AUTHORS.txt"
+  },
+  "homepage": "https://github.com/arschmitz/qunit-assert-classes",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/arschmitz/qunit-assert-classes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arschmitz/qunit-assert-classes/issues"
+  },
+  "license": {
+    "name": "MIT",
+    "url": "http://www.opensource.org/licenses/mit-license.php"
+  },
+  "keywords": [
+    "qunit-plugin",
+    "qunit-assert",
+    "qunit",
+    "assert",
+    "classes"
+  ],
+  "main": "qunit-assert-classes.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.3",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-qunit": "~0.5.2",
+    "grunt-git-authors": "~1.2.0",
+    "grunt-jscs": "0.6.2",
+    "qunitjs": "~1.17.0"
+  }
+}
