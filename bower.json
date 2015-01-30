@@ -1,0 +1,14 @@
+{
+	"name": "qunit-assert-classes",
+	"ignore": [
+		"tests"
+	],
+	"dependencies": {
+		"jquery": ">=1.6"
+	},
+	"devDependencies": {
+		"jshint": "2.4.4",
+		"qunit": "1.17.1",
+		"jquery": "2.1.3"
+	}
+}

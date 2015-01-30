@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "grunt": "~0.4.3",
+    "grunt-bowercopy": "1.1.0",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-qunit": "~0.5.2",
     "grunt-git-authors": "~1.2.0",
