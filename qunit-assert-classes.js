@@ -1,31 +1,33 @@
 ( function( QUnit ) {
-	var classTest = {
-			check: function( element, classes, stateVal, message ) {
-				var result,
-					classArray = classes.split( " " ),
-					missing = [],
-					found = [];
+	function check( element, classes, stateVal, message ) {
+		var result,
+			classArray = classes.split( " " ),
+			missing = [],
+			found = [];
 
-				message = message || "Element must " + ( stateVal ? "" : "not " ) + "have classes";
-				classArray.forEach( function( value ) {
-					if ( !element.hasClass( value ) ) {
-						missing.push( value );
-					} else {
-						found.push( value );
-					}
-				});
-				result = stateVal ? !missing.length : !found.length;
-				QUnit.push( result, classes, result ? classes : found.join( " " ), message );
-			},
-			has: function( element, classes, message ) {
-				classTest.check( element, classes, true, message );
-			},
-			lacks: function( element, classes, message ) {
-				classTest.check( element, classes, false, message );
+		if ( element.jquery && element.length > 1 ) {
+			$.error( "Class checks can only be performed on a single element on a collection" );
+		}
+		element = element.jquery ? element[ 0 ] : element;
+		message = message || "Element must " + ( stateVal ? "" : "not " ) + "have classes";
+		classArray.forEach( function( value ) {
+			var classTest = new RegExp( value );
+			if ( !classTest.test( element.getAttribute( "class" ) ) ) {
+				missing.push( value );
+			} else {
+				found.push( value );
 			}
-		};
+		});
+		result = stateVal ? !missing.length : !found.length;
+		QUnit.push( result, classes, result ? classes : found.join( " " ), message );
+	}
+
 	QUnit.extend( QUnit.assert, {
-		hasClasses: classTest.has,
-		lacksClasses: classTest.lacks
+		hasClasses: function( element, classes, message ) {
+			check( element, classes, true, message );
+		},
+		lacksClasses: function( element, classes, message ) {
+			check( element, classes, false, message );
+		}
 	});
 })( QUnit );
