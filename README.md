@@ -3,7 +3,9 @@
 
 # QUnit Classes assertion plugin
 
-A set of assertions for checking thats an element has ( or does not have ) any number of classes. The check is order independent and gives a diff of the expected classes.
+A set of assertions for checking thats an element has ( or does not have ) any number of classes. The check is order independent and gives a diff of the expected classes. Accepts either a single Dom node or a jQuery object containing exactly one element.
+
+### NOTE: While this accepts jQuery objects it has no dependency on jQuery
 
 ## Usage
 
