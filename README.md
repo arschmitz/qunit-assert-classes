@@ -23,7 +23,7 @@ Where:
 
 ### Example 1: hasClasses with DOM Element
 ```js
-QUnit.test('Example number unit test', function( assert ) {
+QUnit.test('Example hasClasses unit test', function( assert ) {
   var element = document.getElementById( "test" );
   assert.hasClasses( element, "class1 class2" );
   assert.hasClasses( element, "class1 class2", "custom message" );
@@ -32,7 +32,7 @@ QUnit.test('Example number unit test', function( assert ) {
 
 ### Example 2: lacksClasses with jQuery object
 ```js
-QUnit.test('Example number unit test', function( assert ) {
+QUnit.test('Example lacksClasses unit test', function( assert ) {
   var element = $( "#test" );
   assert.lacksClasses( element, "missing-class" );
   assert.lacksClasses( element, "missing-class missing-class-2", "custom message" );

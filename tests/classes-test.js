@@ -3,7 +3,6 @@ QUnit.module( "qunit-assert-classes plugin unit tests" );
 QUnit.test( "hasClasses", function( assert ) {
 	QUnit.expect( 20 );
 	var element = $( "#test" );
-	assert.hasClasses( $( "div" ), "one" );
 	assert.hasClasses( element, "one" );
 	assert.hasClasses( element, "two" );
 	assert.hasClasses( element, "three" );
