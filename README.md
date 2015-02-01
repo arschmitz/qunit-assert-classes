@@ -13,7 +13,7 @@ assert.lacksClasses( element, classes [, message] );
 ```
 
 Where:
- - `element`: a jQuery Object or DOM node ( must be a single element collection not allowed )
+ - `element`: a jQuery Object or DOM node ( must be a single element, collections not allowed )
  - `classes`: a space seperated string of classes
  - `message`: a custom message to replace default message of "Element must (not) have classes"
 
