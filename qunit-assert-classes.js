@@ -10,13 +10,18 @@
 		}
 		element = element.jquery ? element[ 0 ] : element;
 		message = message || "Element must " + ( stateVal ? "" : "not " ) + "have classes";
-		classArray.forEach( function( value ) {
-			if ( ( element.getAttribute( "class" ) || [] ).split( " " ).indexOf( value ) === -1 ) {
-				missing.push( value );
-			} else {
-				found.push( value );
-			}
-		});
+		if ( element.getAttribute( "class") ) {
+			classArray.forEach( function( value ) {
+				if ( element.getAttribute( "class" ).split( " " ).indexOf( value ) === -1 ) {
+					missing.push( value );
+				} else {
+					found.push( value );
+				}
+			});
+		} else {
+			missing = classArray;
+		}
+
 		result = stateVal ? !missing.length : !found.length;
 		QUnit.push( result, classes, result ? classes : found.join( " " ), message );
 	}
