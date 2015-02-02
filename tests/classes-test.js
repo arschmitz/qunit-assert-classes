@@ -26,7 +26,7 @@ QUnit.test( "hasClasses", function( assert ) {
 });
 
 QUnit.test( "lacksClasses", function( assert ) {
-	QUnit.expect( 5 );
+	QUnit.expect( 6 );
 	var element = $( "#test" );
 
 	assert.lacksClasses( element, "one-x" );
@@ -34,6 +34,7 @@ QUnit.test( "lacksClasses", function( assert ) {
 	assert.lacksClasses( element, "one-x", "custom message" );
 	assert.lacksClasses( element, "one-x two-x", "custom message" );
 	assert.lacksClasses( element, "partial", "does not allow partial matches" );
+	assert.lacksClasses( element, "test", "missing class attribute does not throw error" );
 });
 
 QUnit.test( "hasClasses - dom node", function( assert ) {
@@ -63,7 +64,7 @@ QUnit.test( "hasClasses - dom node", function( assert ) {
 });
 
 QUnit.test( "lacksClasses - dom node", function( assert ) {
-	QUnit.expect( 5 );
+	QUnit.expect( 6 );
 	var element = $( "#test" )[ 0 ];
 
 	assert.lacksClasses( element, "one-x" );
@@ -71,4 +72,5 @@ QUnit.test( "lacksClasses - dom node", function( assert ) {
 	assert.lacksClasses( element, "one-x", "custom message" );
 	assert.lacksClasses( element, "one-x two-x", "custom message" );
 	assert.lacksClasses( element, "partial", "does not allow partial matches" );
+	assert.lacksClasses( element, "test", "missing class attribute does not throw error" );
 });
