@@ -26,13 +26,14 @@ QUnit.test( "hasClasses", function( assert ) {
 });
 
 QUnit.test( "lacksClasses", function( assert ) {
-	QUnit.expect( 4 );
+	QUnit.expect( 5 );
 	var element = $( "#test" );
 
 	assert.lacksClasses( element, "one-x" );
 	assert.lacksClasses( element, "two-x one-x" );
 	assert.lacksClasses( element, "one-x", "custom message" );
 	assert.lacksClasses( element, "one-x two-x", "custom message" );
+	assert.lacksClasses( element, "partial", "does not allow partial matches" );
 });
 
 QUnit.test( "hasClasses - dom node", function( assert ) {
@@ -62,11 +63,12 @@ QUnit.test( "hasClasses - dom node", function( assert ) {
 });
 
 QUnit.test( "lacksClasses - dom node", function( assert ) {
-	QUnit.expect( 4 );
+	QUnit.expect( 5 );
 	var element = $( "#test" )[ 0 ];
 
 	assert.lacksClasses( element, "one-x" );
 	assert.lacksClasses( element, "two-x one-x" );
 	assert.lacksClasses( element, "one-x", "custom message" );
 	assert.lacksClasses( element, "one-x two-x", "custom message" );
+	assert.lacksClasses( element, "partial", "does not allow partial matches" );
 });

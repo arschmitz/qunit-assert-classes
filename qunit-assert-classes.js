@@ -11,8 +11,7 @@
 		element = element.jquery ? element[ 0 ] : element;
 		message = message || "Element must " + ( stateVal ? "" : "not " ) + "have classes";
 		classArray.forEach( function( value ) {
-			var classTest = new RegExp( value );
-			if ( !classTest.test( element.getAttribute( "class" ) ) ) {
+			if ( element.getAttribute( "class" ).split( " " ).indexOf( value ) === -1 ) {
 				missing.push( value );
 			} else {
 				found.push( value );
