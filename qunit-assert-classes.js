@@ -1,23 +1,33 @@
 ( function( QUnit ) {
+	function inArray( haystack, needle ) {
+		for ( var i = 0; i < haystack.length; i++ ) {
+			if ( haystack[ i ] === needle ) {
+				return true;
+			}
+		}
+		return false;
+	}
 	function check( element, classes, stateVal, message ) {
-		var result,
+		var i, result, classAttribute, elementClassArray,
 			classArray = classes.split( " " ),
 			missing = [],
 			found = [];
 
-		if ( element.jquery && element.length > 1 ) {
-			$.error( "Class checks can only be performed on a single element on a collection" );
+		if ( element.jquery && element.length !== 1 ) {
+			throw( "Class checks can only be performed on a single element on a collection" );
 		}
 		element = element.jquery ? element[ 0 ] : element;
-		message = message || "Element must " + ( stateVal ? "" : "not " ) + "have classes";
-		if ( element.getAttribute( "class") ) {
-			classArray.forEach( function( value ) {
-				if ( element.getAttribute( "class" ).split( " " ).indexOf( value ) === -1 ) {
-					missing.push( value );
+		classAttribute = element.getAttribute( "class" );
+		message = message || "Element must " + ( stateVal? "" : "not " ) + "have classes";
+		if ( classAttribute ) {
+			elementClassArray = classAttribute.split( " " );
+			for( i = 0; i < classArray.length; i++ ) {
+				if ( !inArray( elementClassArray, classArray[ i ] ) ) {
+					missing.push( classArray[ i ] );
 				} else {
-					found.push( value );
+					found.push( classArray[ i ] );
 				}
-			});
+			}
 		} else {
 			missing = classArray;
 		}

@@ -8,6 +8,7 @@
 	"eqeqeq": true,
 	"eqnull": true,
 	"expr": true,
+	"es3": true,
 	"immed": true,
 	"noarg": true,
 	"onevar": true,
