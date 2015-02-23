@@ -33,7 +33,7 @@
 		}
 
 		result = stateVal ? !missing.length : !found.length;
-		QUnit.push( result, classes, result ? classes : found.join( " " ), message );
+		QUnit.push( result, result ? classes : found.join( " " ), classes, message );
 	}
 
 	QUnit.extend( QUnit.assert, {
