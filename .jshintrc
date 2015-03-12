@@ -1,5 +1,7 @@
 {
 	"globals": {
+		"window": false,
+		"pushTest": false,
 		"QUnit": false,
 		"$": false
 	},
