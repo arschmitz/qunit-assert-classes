@@ -62,6 +62,7 @@ QUnit.test('Example lacksClasses unit test', function( assert ) {
   assert.lacksClasses( element, "missing-class" ); // Passes
   assert.lacksClasses( element, "class1 missing-class-2", "custom message" ); // Fails
 });
+```
 
 ### Example 3: hasClassesStrict
 ```html
