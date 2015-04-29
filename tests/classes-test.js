@@ -99,6 +99,23 @@ QUnit.test( "lacksClassPartial", function( assert ) {
 	assert.lacksClassPartial( element, "iald-", "custom message" );
 });
 
+QUnit.test( "lacksAllClasses", function( assert ) {
+	QUnit.expect( 2 );
+	var element = $( "#test-empty" ),
+		elementEmptyAttribute = $( "#test-empty-attribute-exists" );
+
+	assert.lacksAllClasses( element );
+	assert.lacksAllClasses( elementEmptyAttribute,
+		"Empty existing class attribute works correctly" );
+} );
+
+QUnit.test( "hasSomeClass", function( assert ) {
+	QUnit.expect( 1 );
+	var element = $( "#test" );
+
+	assert.hasSomeClass( element );
+} );
+
 QUnit.test( "hasClasses - dom node", function( assert ) {
 	QUnit.expect( 20 );
 	var element = $( "#test" )[ 0 ];
@@ -169,7 +186,7 @@ QUnit.test( "hasClassStart", function( assert ) {
 	assert.hasClassStart( element, "partial-", "custom message" );
 });
 
-QUnit.test( "lacksClassStart", function( assert ) {
+QUnit.test( "lacksClassStart - dom node", function( assert ) {
 	QUnit.expect( 2 );
 	var element = $( "#test" )[ 0 ];
 
@@ -177,7 +194,7 @@ QUnit.test( "lacksClassStart", function( assert ) {
 	assert.lacksClassStart( element, "partiald-", "custom message" );
 });
 
-QUnit.test( "hasClassPartial", function( assert ) {
+QUnit.test( "hasClassPartial - dom node", function( assert ) {
 	QUnit.expect( 2 );
 	var element = $( "#test" )[ 0 ];
 
@@ -185,13 +202,22 @@ QUnit.test( "hasClassPartial", function( assert ) {
 	assert.hasClassPartial( element, "ial-", "custom message" );
 });
 
-QUnit.test( "lacksClassPartial", function( assert ) {
+QUnit.test( "lacksAllClasses", function( assert ) {
 	QUnit.expect( 2 );
+	var element = $( "#test-empty" ),
+		elementEmptyAttribute = $( "#test-empty-attribute-exists" );
+
+	assert.lacksAllClasses( element );
+	assert.lacksAllClasses( elementEmptyAttribute,
+		"Empty existing class attribute works correctly" );
+} );
+
+QUnit.test( "hasSomeClass - dom node", function( assert ) {
+	QUnit.expect( 1 );
 	var element = $( "#test" )[ 0 ];
 
-	assert.lacksClassPartial( element, "iald-" );
-	assert.lacksClassPartial( element, "iald-", "custom message" );
-});
+	assert.hasSomeClass( element );
+} );
 
 QUnit.module( "Qunit-assert-classes ensure failures", {
 	beforeEach: function( assert ) {
@@ -278,3 +304,20 @@ QUnit.test( "lacksClassPartial - failures", function( assert ) {
 	assert.lacksClassPartial( element, "ial-" );
 	assert.lacksClassPartial( element, "ial-", "custom message" );
 });
+
+QUnit.test( "lacksAllClasses - failures", function( assert ) {
+	QUnit.expect( 1 );
+	var element = $( "#test" );
+
+	assert.lacksAllClasses( element );
+} );
+
+QUnit.test( "hasSomeClass - failures", function( assert ) {
+	QUnit.expect( 2 );
+	var element = $( "#test-empty" )[ 0 ],
+		elementEmptyAttribute = $( "#test-empty-attribute-exists" )[ 0 ];
+
+	assert.hasSomeClass( element );
+	assert.hasSomeClass( elementEmptyAttribute,
+		"custom message" );
+} );

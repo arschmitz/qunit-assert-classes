@@ -24,6 +24,9 @@ assert.lacksClassStart( element, start [, message] );
 assert.hasClassPartial( element, partial [, message] );
 assert.lacksClassPartial( element, partial [, message] );
 
+assert.lacksAllClasses( element [, message] );
+assert.hasSomeClass( element [, message] );
+
 ```
 
 Where:
@@ -147,7 +150,7 @@ QUnit.test('Example hasClassPartial unit test', function( assert ) {
   assert.hasClassPartial( element, "foo", "custom message" ); // Fails
 });
 ```
-### Example 7: lacksClassPartial
+### Example 9: lacksClassPartial
 ```html
 <div class="class1 class2"></div>
 ```
@@ -160,4 +163,29 @@ QUnit.test('Example lacksClassStart unit test', function( assert ) {
   assert.lacksClassPartial( element, "lass", "custom message" ); // Fails
 });
 ```
+### Example 10: lacksAllClasses - checks to make sure an element contains no classes
+```html
+<div class=""></div>
+```
 
+```js
+QUnit.test('Example lacksAllClasses unit test', function( assert ) {
+  var element = document.getElementById( "test" );
+
+  assert.lacksAllClasses( element ); // Passes
+  assert.lacksAllClasses( element, "custom message" ); // Fails
+});
+```
+### Example 10: hasSomeClass - checks to make sure an element has some class does not matter what
+```html
+<div class="class1 class2"></div>
+```
+
+```js
+QUnit.test('Example hasSomeClass unit test', function( assert ) {
+  var element = document.getElementById( "test" );
+
+  assert.hasSomeClass( element ); // Passes
+  assert.hasSomeClass( element, "custom message" ); // Fails
+});
+```
