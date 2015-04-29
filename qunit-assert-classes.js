@@ -65,7 +65,7 @@
 			var classArray = splitClasses( classes ),
 				results = check( element, classArray );
 
-			message = pluralize( message || "Element must have class", classArray );
+			message = message || pluralize( "Element must have class", classArray );
 
 			this.push( !results.missing.length, results.found.join( " " ), classes, message );
 		},
@@ -73,7 +73,7 @@
 			var classArray = splitClasses( classes ),
 				results = check( element, classArray );
 
-			message = pluralize( message || "Element must not have class", classArray );
+			message = message || pluralize( "Element must not have class", classArray );
 
 			this.push( !results.found.length, results.found.join( " " ), classes, message );
 		},
@@ -82,7 +82,7 @@
 				classArray = splitClasses( classes ),
 				results = check( element, classArray );
 
-			message = pluralize( message || "Element must only have class", classArray );
+			message = message || pluralize( "Element must only have class", classArray );
 
 			result =  !results.missing.length && results.element.getAttribute( "class" ) &&
 				splitClasses( results.element.getAttribute( "class" ) ).length ===
