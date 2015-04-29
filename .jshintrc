@@ -3,6 +3,7 @@
 		"window": false,
 		"pushTest": false,
 		"QUnit": false,
+		"define": false,
 		"$": false
 	},
 	"boss": true,
@@ -10,7 +11,6 @@
 	"eqeqeq": true,
 	"eqnull": true,
 	"expr": true,
-	"es3": true,
 	"immed": true,
 	"noarg": true,
 	"onevar": true,
@@ -18,5 +18,7 @@
 	"smarttabs": true,
 	"trailing": true,
 	"undef": true,
-	"unused": true
+	"unused": true,
+
+	"node": true
 }

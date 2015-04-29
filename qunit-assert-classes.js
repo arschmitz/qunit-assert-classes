@@ -1,4 +1,17 @@
-( function( QUnit ) {
+( function( factory ) {
+	if ( typeof define === "function" && define.amd ) {
+
+		// AMD. Register as an anonymous module.
+		define( [
+			"qunit"
+		], factory );
+	} else {
+
+		// Browser globals
+		factory( QUnit );
+	}
+}( function( QUnit ) {
+
 	function inArray( haystack, needle ) {
 		for ( var i = 0; i < haystack.length; i++ ) {
 			if (
@@ -153,4 +166,4 @@
 			this.push( classes.length, classes.length, true, message );
 		}
 	});
-})( QUnit );
+} ) );
