@@ -1,7 +1,7 @@
 {
   "name": "qunit-assert-classes",
   "description": "A set of assertions for checking thats an element has ( or does not have ) any number of classes. The check is order independent and gives a diff of the expected classes.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Alex Schmitz",
     "url": "https://github.com/arschmitz/qunit-assert-classes/blob/master/AUTHORS.txt"
