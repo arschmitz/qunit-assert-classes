@@ -36,6 +36,6 @@
     "grunt-contrib-qunit": "~0.5.2",
     "grunt-git-authors": "~1.2.0",
     "grunt-jscs": "0.6.2",
-    "qunitjs": "~1.17.0"
+    "qunitjs": "~1.23.1"
   }
 }
