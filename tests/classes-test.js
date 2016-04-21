@@ -221,12 +221,13 @@ QUnit.test( "hasSomeClass - dom node", function( assert ) {
 
 QUnit.module( "Qunit-assert-classes ensure failures", {
 	beforeEach: function( assert ) {
-		var originalPush = assert.push;
+		var originalPush = assert.pushResult;
 
-		assert.push = function( result, actual, expected, message ) {
+		assert.pushResult = function( args ) {
 
 			// inverts the result so we can test failing assertions
-			originalPush( !result, actual, expected, message );
+			args.result = !args.result;
+			originalPush( args );
 		};
 	}
 });
