@@ -5,7 +5,7 @@
 	],
 	"devDependencies": {
 		"jshint": "2.4.4",
-		"qunit": "1.17.1",
+		"qunit": "1.23.1",
 		"jquery": "2.1.3"
 	}
 }

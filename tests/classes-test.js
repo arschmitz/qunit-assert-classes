@@ -1,7 +1,7 @@
 QUnit.module( "qunit-assert-classes plugin unit tests" );
 
 QUnit.test( "hasClasses", function( assert ) {
-	QUnit.expect( 10 );
+	assert.expect( 10 );
 	var element = $( "#test" );
 	assert.hasClasses( element, "one" );
 	assert.hasClasses( element, "two" );
@@ -16,7 +16,7 @@ QUnit.test( "hasClasses", function( assert ) {
 });
 
 QUnit.test( "hasClasses - custom message", function( assert ) {
-	QUnit.expect( 10 );
+	assert.expect( 10 );
 	var element = $( "#test" );
 	assert.hasClasses( element, "one", "custom message" );
 	assert.hasClasses( element, "two", "custom message" );
@@ -32,7 +32,7 @@ QUnit.test( "hasClasses - custom message", function( assert ) {
 
 
 QUnit.test( "lacksClasses", function( assert ) {
-	QUnit.expect( 6 );
+	assert.expect( 6 );
 	var element = $( "#test" );
 
 	assert.lacksClasses( element, "one-x" );
@@ -44,7 +44,7 @@ QUnit.test( "lacksClasses", function( assert ) {
 });
 
 QUnit.test( "hasClassesStrict", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" );
 
 	assert.hasClassesStrict( element, "one two three extra partial-match" );
@@ -52,7 +52,7 @@ QUnit.test( "hasClassesStrict", function( assert ) {
 });
 
 QUnit.test( "hasClassRegex", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" );
 
 	assert.hasClassRegex( element, /^par([a-z]){4}-(match)$/ );
@@ -60,7 +60,7 @@ QUnit.test( "hasClassRegex", function( assert ) {
 });
 
 QUnit.test( "lacksClassRegex", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" );
 
 	assert.lacksClassRegex( element, /^par([a-z]){4}-(mabtch)$/ );
@@ -68,7 +68,7 @@ QUnit.test( "lacksClassRegex", function( assert ) {
 });
 
 QUnit.test( "hasClassStart", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" );
 
 	assert.hasClassStart( element, "partial-" );
@@ -76,7 +76,7 @@ QUnit.test( "hasClassStart", function( assert ) {
 });
 
 QUnit.test( "lacksClassStart", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" );
 
 	assert.lacksClassStart( element, "partiald-" );
@@ -84,7 +84,7 @@ QUnit.test( "lacksClassStart", function( assert ) {
 });
 
 QUnit.test( "hasClassPartial", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" );
 
 	assert.hasClassPartial( element, "ial-" );
@@ -92,7 +92,7 @@ QUnit.test( "hasClassPartial", function( assert ) {
 });
 
 QUnit.test( "lacksClassPartial", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" );
 
 	assert.lacksClassPartial( element, "iald-" );
@@ -100,7 +100,7 @@ QUnit.test( "lacksClassPartial", function( assert ) {
 });
 
 QUnit.test( "lacksAllClasses", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test-empty" ),
 		elementEmptyAttribute = $( "#test-empty-attribute-exists" );
 
@@ -110,14 +110,14 @@ QUnit.test( "lacksAllClasses", function( assert ) {
 } );
 
 QUnit.test( "hasSomeClass", function( assert ) {
-	QUnit.expect( 1 );
+	assert.expect( 1 );
 	var element = $( "#test" );
 
 	assert.hasSomeClass( element );
 } );
 
 QUnit.test( "hasClasses - dom node", function( assert ) {
-	QUnit.expect( 20 );
+	assert.expect( 20 );
 	var element = $( "#test" )[ 0 ];
 
 	assert.hasClasses( element, "one" );
@@ -143,7 +143,7 @@ QUnit.test( "hasClasses - dom node", function( assert ) {
 });
 
 QUnit.test( "lacksClasses - dom node", function( assert ) {
-	QUnit.expect( 6 );
+	assert.expect( 6 );
 	var element = $( "#test" )[ 0 ];
 
 	assert.lacksClasses( element, "one-x" );
@@ -155,7 +155,7 @@ QUnit.test( "lacksClasses - dom node", function( assert ) {
 });
 
 QUnit.test( "hasClassesStrict - dom node", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" )[ 0 ];
 
 	assert.hasClassesStrict( element, "one two three extra partial-match" );
@@ -163,7 +163,7 @@ QUnit.test( "hasClassesStrict - dom node", function( assert ) {
 });
 
 QUnit.test( "hasClassRegex - dom node", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" )[ 0 ];
 
 	assert.hasClassRegex( element, /^par([a-z]){4}-(match)$/ );
@@ -171,7 +171,7 @@ QUnit.test( "hasClassRegex - dom node", function( assert ) {
 });
 
 QUnit.test( "lacksClassRegex - dom node", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" )[ 0 ];
 
 	assert.lacksClassRegex( element, /^par([a-z]){4}-(mabtch)$/ );
@@ -179,7 +179,7 @@ QUnit.test( "lacksClassRegex - dom node", function( assert ) {
 });
 
 QUnit.test( "hasClassStart", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" )[ 0 ];
 
 	assert.hasClassStart( element, "partial-" );
@@ -187,7 +187,7 @@ QUnit.test( "hasClassStart", function( assert ) {
 });
 
 QUnit.test( "lacksClassStart - dom node", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" )[ 0 ];
 
 	assert.lacksClassStart( element, "partiald-" );
@@ -195,7 +195,7 @@ QUnit.test( "lacksClassStart - dom node", function( assert ) {
 });
 
 QUnit.test( "hasClassPartial - dom node", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" )[ 0 ];
 
 	assert.hasClassPartial( element, "ial-" );
@@ -203,7 +203,7 @@ QUnit.test( "hasClassPartial - dom node", function( assert ) {
 });
 
 QUnit.test( "lacksAllClasses", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test-empty" ),
 		elementEmptyAttribute = $( "#test-empty-attribute-exists" );
 
@@ -213,7 +213,7 @@ QUnit.test( "lacksAllClasses", function( assert ) {
 } );
 
 QUnit.test( "hasSomeClass - dom node", function( assert ) {
-	QUnit.expect( 1 );
+	assert.expect( 1 );
 	var element = $( "#test" )[ 0 ];
 
 	assert.hasSomeClass( element );
@@ -221,18 +221,19 @@ QUnit.test( "hasSomeClass - dom node", function( assert ) {
 
 QUnit.module( "Qunit-assert-classes ensure failures", {
 	beforeEach: function( assert ) {
-		var originalPush = assert.push;
+		var originalPush = assert.pushResult;
 
-		assert.push = function( result, actual, expected, message ) {
+		assert.pushResult = function( args ) {
 
 			// inverts the result so we can test failing assertions
-			originalPush( !result, actual, expected, message );
+			args.result = !args.result;
+			originalPush( args );
 		};
 	}
 });
 
 QUnit.test( "hasClasses - failures", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 
 	var element = $( "#test" );
 
@@ -241,7 +242,7 @@ QUnit.test( "hasClasses - failures", function( assert ) {
 });
 
 QUnit.test( "lacksClasses - failures", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 
 	var element = $( "#test" );
 
@@ -250,7 +251,7 @@ QUnit.test( "lacksClasses - failures", function( assert ) {
 });
 
 QUnit.test( "hasClassesStrict - failures", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" );
 
 	assert.hasClassesStrict( element, "one" );
@@ -258,7 +259,7 @@ QUnit.test( "hasClassesStrict - failures", function( assert ) {
 });
 
 QUnit.test( "hasClassRegex - failures", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" );
 
 	assert.hasClassRegex( element, /^par([a-z]){4}-(mabtch)$/ );
@@ -266,7 +267,7 @@ QUnit.test( "hasClassRegex - failures", function( assert ) {
 });
 
 QUnit.test( "hasClassRegex - failures", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" );
 
 	assert.lacksClassRegex( element, /^par([a-z]){4}-(match)$/ );
@@ -274,7 +275,7 @@ QUnit.test( "hasClassRegex - failures", function( assert ) {
 });
 
 QUnit.test( "hasClassStart - failures", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" )[ 0 ];
 
 	assert.hasClassStart( element, "partiald-" );
@@ -282,7 +283,7 @@ QUnit.test( "hasClassStart - failures", function( assert ) {
 });
 
 QUnit.test( "lacksClassStart - failures", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" )[ 0 ];
 
 	assert.lacksClassStart( element, "partial-" );
@@ -290,7 +291,7 @@ QUnit.test( "lacksClassStart - failures", function( assert ) {
 });
 
 QUnit.test( "hasClassPartial - failures", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" );
 
 	assert.hasClassPartial( element, "iald-" );
@@ -298,7 +299,7 @@ QUnit.test( "hasClassPartial - failures", function( assert ) {
 });
 
 QUnit.test( "lacksClassPartial - failures", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test" );
 
 	assert.lacksClassPartial( element, "ial-" );
@@ -306,14 +307,14 @@ QUnit.test( "lacksClassPartial - failures", function( assert ) {
 });
 
 QUnit.test( "lacksAllClasses - failures", function( assert ) {
-	QUnit.expect( 1 );
+	assert.expect( 1 );
 	var element = $( "#test" );
 
 	assert.lacksAllClasses( element );
 } );
 
 QUnit.test( "hasSomeClass - failures", function( assert ) {
-	QUnit.expect( 2 );
+	assert.expect( 2 );
 	var element = $( "#test-empty" )[ 0 ],
 		elementEmptyAttribute = $( "#test-empty-attribute-exists" )[ 0 ];
 
